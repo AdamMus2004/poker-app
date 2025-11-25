@@ -5,7 +5,7 @@ public class Player {
     String name;
     int playersChips;
     List<Card> hand;
-    Moves move;
+
 
     public Player(String name, int playersChips, List<Card> hand, Moves move) {
         this.name = name;
@@ -25,10 +25,6 @@ public class Player {
         return hand;
     }
 
-    public Moves getMove() {
-        return move;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -41,7 +37,4 @@ public class Player {
         this.hand = hand;
     }
 
-    public void setMove(Moves move) {
-        this.move = move;
-    }
 }
