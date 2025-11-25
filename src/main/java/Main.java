@@ -7,5 +7,9 @@ public class Main {
         game.showTheGameState();
         game.flop();
         game.showBoard();
+        game.turn();
+        game.showBoard();
+        game.river();
+        game.showBoard();
     }
 }

@@ -39,6 +39,14 @@ public class Game {
         board.add(deck.drawCard());
     }
 
+    public void turn(){
+        board.add(deck.drawCard());
+    }
+
+    public void river(){
+        board.add(deck.drawCard());
+    }
+
     public void showBoard(){
         for (Card card : board) {
             System.out.println(card);
