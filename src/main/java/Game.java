@@ -5,6 +5,7 @@ public class Game {
     List<Player> players;
     Deck deck;
     int numberOfPlayers;
+    List<Card> board;
 
     public Game(Deck deck, int numberOfPlayers) {
         this.deck = deck;
@@ -13,6 +14,7 @@ public class Game {
 
     public  void startGame(){
         this.players = new ArrayList<>();
+        this.board = new ArrayList<>();
         deck.shuffle();
         for (int i = 1; i <= numberOfPlayers; i++) {
             players.add(new Player("Player"+i,100));
@@ -30,5 +32,19 @@ public class Game {
             System.out.println(player);
         }
     }
+
+    public void flop(){
+        board.add(deck.drawCard());
+        board.add(deck.drawCard());
+        board.add(deck.drawCard());
+    }
+
+    public void showBoard(){
+        for (Card card : board) {
+            System.out.println(card);
+        }
+    }
+
+
 
 }

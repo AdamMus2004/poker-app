@@ -5,5 +5,7 @@ public class Main {
         game.startGame();
         game.dealTwoCardsToEachPlayer();
         game.showTheGameState();
+        game.flop();
+        game.showBoard();
     }
 }
