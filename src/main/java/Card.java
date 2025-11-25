@@ -18,7 +18,7 @@ public class Card {
     @Override
     public String toString() {
 
-        return formatRank(rank.getValue()) + " " + suit.getValue();
+        return "|"+formatRank(rank.getValue()) + " " + suit.getValue()+"|";
     }
     public static String formatRank(int num) {
         switch (num){

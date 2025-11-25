@@ -49,8 +49,12 @@ public class Game {
 
     public void showBoard(){
         for (Card card : board) {
-            System.out.println(card);
+            System.out.print(card);
         }
+        System.out.println();
+    }
+    public void showDeckSize(){
+        System.out.println(deck.allCards.size());
     }
 
 
