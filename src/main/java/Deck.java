@@ -16,4 +16,9 @@ public class Deck {
     public void shuffle(){
         Collections.shuffle(allCards);
     }
+    public Card drawCard(){
+        Card card = allCards.getFirst();
+        allCards.removeFirst();
+        return card;
+    }
 }

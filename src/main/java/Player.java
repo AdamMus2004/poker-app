@@ -7,10 +7,10 @@ public class Player {
     List<Card> hand;
 
 
-    public Player(String name, int playersChips, List<Card> hand, Moves move) {
+    public Player(String name, int playersChips) {
         this.name = name;
         this.playersChips = playersChips;
-        this.hand = hand;
+        this.hand = new ArrayList<>();
     }
 
     public String getName() {
@@ -37,4 +37,12 @@ public class Player {
         this.hand = hand;
     }
 
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", playersChips=" + playersChips +
+                ", hand=" + hand +
+                '}';
+    }
 }
