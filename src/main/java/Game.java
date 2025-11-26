@@ -6,10 +6,12 @@ public class Game {
     Deck deck;
     int numberOfPlayers;
     List<Card> board;
+    int startChips;
 
-    public Game(Deck deck, int numberOfPlayers) {
+    public Game(Deck deck, int numberOfPlayers, int startChips) {
         this.deck = deck;
         this.numberOfPlayers = numberOfPlayers;
+        this.startChips = startChips;
     }
 
     public  void startGame(){
@@ -17,7 +19,7 @@ public class Game {
         this.board = new ArrayList<>();
         deck.shuffle();
         for (int i = 1; i <= numberOfPlayers; i++) {
-            players.add(new Player("Player"+i,100));
+            players.add(new Player("Player"+i,startChips));
         }
     }
     public void dealTwoCardsToEachPlayer() {
