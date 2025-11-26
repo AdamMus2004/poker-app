@@ -23,6 +23,7 @@ public class Poker {
             game.showBoard();
             game.river();
             game.showBoard();
+            game.printWinner();
         }
     }
 }

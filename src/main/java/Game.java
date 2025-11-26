@@ -58,6 +58,10 @@ public class Game {
     public void showDeckSize(){
         System.out.println(deck.allCards.size());
     }
+    public void printWinner(){
+        HandEvaluator handEvaluator = new HandEvaluator(players,board);
+        System.out.println(handEvaluator.winner());
+    }
 
 
 
