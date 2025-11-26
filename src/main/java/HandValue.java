@@ -6,6 +6,13 @@ public class HandValue {
     List<Integer> tiebreakers;
     String handName;
 
+    public HandValue(int rank, List<Card> bestFiveCards, List<Integer> tiebreakers, String handName) {
+        this.rank = rank;
+        this.bestFiveCards = bestFiveCards;
+        this.tiebreakers = tiebreakers;
+        this.handName = handName;
+    }
+
     int compareTo(HandValue other) {
         if (this.rank > other.rank) return 1;
         if (this.rank < other.rank) return -1;
