@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class HandEvaluator {
     List<Player> players;
@@ -10,25 +12,25 @@ public class HandEvaluator {
         this.board = board;
     }
 
-    public String winner(){
-        Card highestValueCard = null;
-        Player winnerPlayer = null;
-        int max = Integer.MIN_VALUE;
-        for (Player player : players) {
-            List<Card> playerCardsPlusBoard = new ArrayList<>();
-            playerCardsPlusBoard.addAll(player.hand);
-            playerCardsPlusBoard.addAll(board);
+    public HandValue evaluateHand(Player player) {
+        List<Card> playerHand = new ArrayList<>();
+        playerHand.addAll(board);
+        playerHand.addAll(player.hand);
 
-            for (Card card : playerCardsPlusBoard) {
-                int valueOfCard = card.getRank().getValue();
-                if (valueOfCard>max){
-                    max=valueOfCard;
-                    highestValueCard=card;
-                    winnerPlayer = player;
+        playerHand.sort((a,b)->b.getRank().getValue() - a.getRank().getValue());
 
-                }
-            }
+        List<Card> bestFiveCards = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            bestFiveCards.add(playerHand.get(i));
         }
-        return "The winner is "+ winnerPlayer.getName()+ " with highest card: "+ highestValueCard;
+
+        List<Integer> tiebreakers = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            tiebreakers.add(playerHand.get(i).getRank().getValue());
+        }
+
+        return new HandValue(1,bestFiveCards,tiebreakers,"High Card");
     }
+
+
 }
